@@ -1,0 +1,19 @@
+{
+  "version": "0.1.15",
+  "source": "src",
+  "output": "dist",
+  "template": true,
+  "baseTemplate": null,
+  "nameAsTitle": false,
+  "firstLineAsTitle": true,
+  "cssVariables": {
+    "--primary": "cornflowerblue",
+    "--body-color": "#666",
+    "--body-bg": "ivory",
+    "--heading-color": "#444",
+    "--content-bg": "white"
+  },
+  "extraHead": [],
+  "headingsId": true,
+  "headingsIdSlugify": true
+}

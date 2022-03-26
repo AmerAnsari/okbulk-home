@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "index-md"
+  },
+  "devDependencies": {
+    "index.md": "^0.1.18"
+  }
+}
