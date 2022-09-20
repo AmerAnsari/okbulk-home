@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="okbulk">
+  <meta name="description" content="OkBulk is a place to order and receive your bulk needs anytime and anywhere.">
+
+  <!-- Title and favicon -->
+  <title>okbulk</title>
+  <link rel="icon" type="image/png" href="asset/img/favicon-title.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="asset/style.css">
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="asset/script.js"></script>
+</head>
+
+<body>
+<div>
+
+  <!-- Background image -->
+  <div class="background"></div>
+
+  <!-- Content -->
+  <div class="container p-5 bg-white">
+    <h1 class="text-center fw-bold my-5 hello">Contact Us</h1>
+    <div class="row">
+
+      <!-- Left column -->
+      <div class="col-lg-6">
+
+        <!-- Email -->
+        <div class="pt-5">
+          <div class="title">Email</div>
+          <p><a href="mailto:info@okbulk.com">info@okbulk.com</a></p>
+        </div>
+
+        <!-- Phone number -->
+        <div>
+          <div class="title">Phone number</div>
+          <p><a href="tel:00971501900741">+97150-1900-741</a></p>
+        </div>
+
+        <!-- Address -->
+        <div>
+          <div class="title">Address</div>
+          <p>301 - Api World Tower</p>
+        </div>
+      </div>
+
+      <!-- Right column -->
+      <div class="col-lg-6">
+        <div class="pt-5">
+
+          <!-- Email -->
+          <div class="form-floating mb-3">
+            <input name="email" class="form-control" id="email" type="email"
+                   placeholder="Email">
+            <label for="email">Email</label>
+          </div>
+
+          <!-- Subject -->
+          <div class="form-floating mb-3">
+            <input name="subject" class="form-control" id="subject" type="text"
+                   placeholder="Subject">
+            <label for="subject">Subject</label>
+          </div>
+
+          <!-- Message -->
+          <div class="form-floating mb-3">
+            <textarea name="message"
+                      class="form-control"
+                      id="message"
+                      placeholder="Message"></textarea>
+            <label for="message">Message</label>
+          </div>
+
+          <!-- Submit -->
+          <button class="btn w-100 btn-success p-2 fw-bold text-light shadow-sm"
+                  onclick="sendMail()"
+                  type="button">
+            SUBMIT
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

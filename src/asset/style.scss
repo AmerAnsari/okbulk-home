@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap");
+
+/* Bootstrap */
+
+$primary: #3498db;
+$danger: #e74c3c;
+$secondary: #7f8c8d;
+$success: #2ecc71;
+$info: #9b59b6;
+$warning: #f1c40f;
+$light: #F6F6F9;
+$dark: #2c3e50;
+$font-size: 0.875rem;
+$font-size-sm: $font-size * 0.785;
+$font-size-xs: $font-size * 0.643;
+
+$font-family-base: "Source Sans Pro", sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+/* Global */
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar {
+  background: #212121;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111;
+}
+
+body {
+
+  .title {
+    color: $dark;
+    font-weight: bold;
+  }
+
+  .background {
+    background-image: url("img/ship.jpg");
+    height: 450px;
+    margin-top: -24px;
+    margin-bottom: -150px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .container {
+    max-width: 1140px;
+
+    [type=submit] {
+      font-size: $font-size-lg;
+    }
+
+    #email.error {
+      border-color: $danger;
+    }
+  }
+}
