@@ -24,7 +24,6 @@
     "sass": "^1.43.5"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
     "bootstrap": "^5.2.0",
     "jquery": "^3.6.0"
   }

@@ -51,7 +51,6 @@ gulp.task("build:html", () => {
       collapseWhitespace: true,
       removeComments: true,
     }))
-    .pipe(replace("node_modules/@fortawesome/fontawesome-free", "asset"))
     .pipe(replace("node_modules/bootstrap/dist/js", "asset"))
     .pipe(replace("node_modules/jquery/dist", "asset"))
     .pipe(gulp.dest("dist"));
@@ -61,8 +60,6 @@ gulp.task("build:asset", () => {
   return merge(
     gulp.src("src/asset/*/**/*")
       .pipe(gulp.dest("dist/asset/")),
-    gulp.src(["node_modules/@fortawesome/fontawesome-free/svgs/{" + svgs.join() + "}.svg"])
-      .pipe(gulp.dest("dist/asset/svgs")),
   );
 });
 
@@ -88,7 +85,6 @@ gulp.task("build", gulp.series(
 
 gulp.task("serve:html", () => {
   return gulp.src(["src/**/*.html"])
-    .pipe(replace("node_modules/@fortawesome/fontawesome-free", "asset"))
     .pipe(replace("node_modules/bootstrap/dist/js", "asset"))
     .pipe(replace("node_modules/jquery/dist", "asset"))
     .pipe(gulp.dest("serve"));
@@ -104,8 +100,6 @@ gulp.task("serve:asset", () => {
   return merge(
     gulp.src(["src/asset/*/**/*", "src/asset/*.js"])
       .pipe(gulp.dest("serve/asset/")),
-    gulp.src(["node_modules/@fortawesome/fontawesome-free/svgs/{" + svgs.join() + "}.svg"])
-      .pipe(gulp.dest("serve/asset/svgs")),
   );
 });
 

@@ -13,6 +13,7 @@ $dark: #2c3e50;
 $font-size: 0.875rem;
 $font-size-sm: $font-size * 0.785;
 $font-size-xs: $font-size * 0.643;
+$min-contrast-ratio: 2.5;
 
 $font-family-base: "Source Sans Pro", sans-serif;
 $font-weight-normal: 400;
@@ -42,6 +43,11 @@ body {
     font-weight: bold;
   }
 
+  a {
+    text-decoration: none;
+    color: $primary;
+  }
+
   .background {
     background-image: url("img/ship.jpg");
     height: 450px;
@@ -53,13 +59,71 @@ body {
 
   .container {
     max-width: 1140px;
+    background: $white;
+    text-align: center;
+    padding: map_get($spacers, 5);
 
-    [type=submit] {
-      font-size: $font-size-lg;
+    .logo {
+      width: 500px;
     }
 
-    #email.error {
-      border-color: $danger;
+    .slogan {
+      color: $secondary;
+      margin: 50px 0;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+    }
+
+    .buttons {
+      display: flex;
+      padding-bottom: map_get($spacers, 5);
+      justify-content: center;
+    }
+
+    .team {
+      display: flex;
+      justify-content: center;
+
+      > div {
+        width: 200px;
+        position: relative;
+
+        .image {
+          width: 128px;
+          margin-bottom: map_get($spacers, 3);
+        }
+
+        .email {
+          top: 75px;
+          right: 30px;
+          position: absolute;
+          border: 2px solid $white;
+          background: $white;
+          padding: 0 4px;
+          @extend .rounded-circle;
+
+          &:hover {
+            transition: ease-in-out 0.2s;
+            border-color: $primary;
+          }
+
+          img {
+            width: 18px;
+            margin-bottom: 3px;
+          }
+        }
+      }
+    }
+
+    .footer {
+      text-align: left;
+
+      .footer-header {
+        letter-spacing: 2px;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+      }
     }
   }
 }
