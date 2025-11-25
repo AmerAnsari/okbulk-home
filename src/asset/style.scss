@@ -172,6 +172,14 @@ section {
           font-weight: $font-weight-bold;
           color: var(--bs-secondary);
           text-shadow: var(--bs-box-shadow);
+
+          @at-root {
+            @include media-breakpoint-down(sm) {
+              & {
+                display: none;
+              }
+            }
+          }
         }
 
         .header-slogan {
