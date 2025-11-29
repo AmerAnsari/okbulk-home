@@ -62,19 +62,19 @@ $theme-colors: map-remove(
 //@import "node_modules/bootstrap/scss/tables";
 //@import "../node_modules/bootstrap/scss/forms";
 @import "node_modules/bootstrap/scss/buttons";
-//@import "../node_modules/bootstrap/scss/transitions";
+//@import "node_modules/bootstrap/scss/transitions";
 //@import "../node_modules/bootstrap/scss/dropdown";
 //@import "../node_modules/bootstrap/scss/button-group";
 //@import "../node_modules/bootstrap/scss/nav";
 //@import "../node_modules/bootstrap/scss/navbar";
 //@import "../node_modules/bootstrap/scss/card";
-//@import "../node_modules/bootstrap/scss/accordion";
+//@import "node_modules/bootstrap/scss/accordion";
 //@import "../node_modules/bootstrap/scss/breadcrumb";
 //@import "../node_modules/bootstrap/scss/pagination";
 //@import "../node_modules/bootstrap/scss/badge";
 //@import "../node_modules/bootstrap/scss/alert";
 //@import "../node_modules/bootstrap/scss/progress";
-//@import "../node_modules/bootstrap/scss/list-group";
+@import "node_modules/bootstrap/scss/list-group";
 //@import "../node_modules/bootstrap/scss/close";
 //@import "../node_modules/bootstrap/scss/toasts";
 //@import "../node_modules/bootstrap/scss/modal";
@@ -117,6 +117,7 @@ img {
 
   &.wave-flip {
     scale: -1;
+    margin-top: -1px;
   }
 }
 
@@ -125,7 +126,7 @@ section {
   color: var(--bs-body-color);
 
   .section-subtitle {
-    font-size: $font-size-lg;
+    font-size: $font-size-base;
   }
 }
 
@@ -164,37 +165,6 @@ section {
 
       .header-logo {
         width: 32px;
-      }
-
-      .header-title-slogan {
-
-        .header-title {
-          font-weight: $font-weight-bold;
-          color: var(--bs-secondary);
-          text-shadow: var(--bs-box-shadow);
-
-          @at-root {
-            @include media-breakpoint-down(sm) {
-              & {
-                display: none;
-              }
-            }
-          }
-        }
-
-        .header-slogan {
-          color: var(--bs-secondary);
-          font-weight: $font-weight-normal;
-          font-size: $font-size-sm;
-
-          @at-root {
-            @include media-breakpoint-down(sm) {
-              & {
-                display: none;
-              }
-            }
-          }
-        }
       }
     }
   }
@@ -263,7 +233,7 @@ section {
 }
 
 #team {
-  background-image: url("img/port.jpg");
+  background-image: url("img/ship-2.jpeg");
   box-shadow: inset 0 0 0 1000rem rgba(0, 0, 0, 0.3);
   background-size: cover;
   background-position: center;
@@ -320,51 +290,84 @@ section {
   }
 }
 
+#faq {
+  .inner {
+    @extend .container;
+
+    .accordion {
+      overflow: hidden;
+
+      .item {
+        position: relative;
+        border-radius: $border-radius-xl;
+        transition: background 0.2s ease-in-out;
+        padding: map-get($spacers, 3) map-get($spacers, 4);
+
+        &:not(:first-child) {
+          margin-top: map-get($spacers, 2);
+        }
+
+        &:hover {
+          background: $primary-container;
+        }
+
+        &:has(input:checked) {
+          background: $primary-container;
+        }
+
+        input {
+          position: absolute;
+          opacity: 0;
+          z-index: -1;
+
+          &:checked {
+
+            ~ .body {
+              max-height: 20rem;
+            }
+
+            ~ .header {
+              padding-bottom: map-get($spacers, 4);
+            }
+          }
+        }
+
+        .header {
+          justify-content: space-between;
+          border-radius: $border-radius-xl;
+          display: flex;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          padding: map-get($spacers, 3) map-get($spacers, 4);
+          margin: -#{map-get($spacers, 3)} -#{map-get($spacers, 4)};
+          font-size: $h5-font-size;
+          font-weight: $font-weight-normal;
+        }
+
+        .body {
+          color: $text-muted;
+          max-height: 0;
+          padding: 0;
+          overflow: hidden;
+          transition: all 0.2s ease;
+        }
+      }
+    }
+  }
+}
+
 #contact {
   .inner {
     @extend .container;
 
-    .contact-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: map_get($spacers, 3);
-      margin-top: map_get($spacers, 5);
+    .list-group {
+      --bs-list-group-bg: transparent;
+      --bs-list-group-border-width: 0;
+      --bs-list-group-action-hover-bg: #3498db1f;
+      --bs-list-group-border-radius: var(--bs-border-radius-2xl);
 
-      @at-root {
-        @include media-breakpoint-down(lg) {
-          & {
-            justify-content: center;
-          }
-        }
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        border-radius: 18px;
-        background: $white;
-        width: 128px;
-        height: 128px;
-        color: $body-bg-dark;
-        gap: map_get($spacers, 3);
-        transition: $transition-base;
-
-        &:hover,
-        &:focus {
-          box-shadow: var(--bs-box-shadow);
-        }
-
-        &:active {
-          box-shadow: none;
-        }
-
-        .icon {
-          padding: 12px;
-          border-radius: 12px;
-          background: $primary-container;
-        }
+      .list-group-item {
+        border-radius: $border-radius-xl;
 
         img {
           width: 24px;
