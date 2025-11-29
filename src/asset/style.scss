@@ -143,10 +143,11 @@ section {
 #header {
   box-shadow: var(--bs-box-shadow-sm);
   background: unset;
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(20px);
   position: sticky;
   top: 0;
   z-index: 1;
+  margin-bottom: -66px;
 
   .inner {
     @extend .container;
@@ -177,6 +178,7 @@ section {
   background-repeat: repeat;
   background-size: 1400px;
   animation: bgMove 100s linear infinite;
+  height: calc(100vh - 66px);
 
   @keyframes bgMove {
     from {
